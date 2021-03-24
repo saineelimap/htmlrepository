@@ -4,6 +4,39 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+            var n1, n2;
+            function multiplyBy()
+            {
+
+                n1 = document.getElementById("firstNumber").value;
+                n2 = document.getElementById("secondNumber").value;
+                document.getElementById("result").innerHTML = n1 * n2;
+            }
+
+            function divideBy()
+            {
+                n1 = document.getElementById("firstNumber").value;
+                n2 = document.getElementById("secondNumber").value;
+                document.getElementById("result").innerHTML = n1 / n2;
+            }
+            function addition() {
+                n1 = Number(document.getElementById("firstNumber").value);
+                n2 = Number(document.getElementById("secondNumber").value);
+                var result1=n1+n2;
+                document.getElementById("result").innerHTML = result1;
+            }
+            function substraction() {
+                n1 = document.getElementById("firstNumber").value;
+                n2 = document.getElementById("secondNumber").value;
+                document.getElementById("result").innerHTML = n1 - n2;
+            }
+
+
+
+        </script>
+
     </head>
     <body>
 
@@ -12,37 +45,15 @@
             2nd Number: <input type="text" id="secondNumber" /><br>
             <input type="button" onClick="multiplyBy()" Value="Multiply" />
             <input type="button" onClick="divideBy()" Value="Divide" />
+            <input type="button" onClick="addition()" Value="Addition" />
+            <input type="button" onClick="substraction()" Value="substraction" />
+
         </form>
-        <p id = "result">The Result is : <br>
-        
+        <p>The Result is : <br>
+            <span id = "result"></span>
         </p>
 
 
-        <script>
-
-            var n1, n2, n3;
-            function multiplyBy()
-            {
-                n1 = document.getElementById("firstNumber").value;
-                n2 = document.getElementById("secondNumber").value;
-                document.getElementById("result").innerHTML = n1 * n2;
-            }
-          
-            function divideBy()
-            {
-                n1 = document.getElementById("firstNumber").value;
-                n2 = document.getElementById("secondNumber").value;
-                document.getElementById("result").innerHTML = n1 / n2;
-            }
-
-
-
-
-           
-
-
-
-        </script>
 
 
     </body>

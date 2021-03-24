@@ -1,0 +1,98 @@
+
+<!DOCUMENT type>
+<html>
+<head>
+<title></title>
+<script>
+function validate(){
+
+var first=document.form1.name1.value;
+var second=document.form1.name2.value;
+var password1=document.form1.pass.value;
+var password2=document.form1.cpass.value;
+var email1=document.form1.email.value;
+var atposition=email1.indexOf("@");  
+var dotposition=email1.lastIndexOf("."); 
+
+var curdate=new Date();
+var dob=new Date(document.form1.dob.value);
+
+var mobile=document.form1.phnnum.value;
+
+if(first==" "||first==null||second==""||second==null){
+alert("name should be fill");
+return false;
+}
+if(dob>curdate){
+alert(" please enter valid date of birth.");
+return false;
+}
+if(mobile.length<10||mobile.length>10){
+alert("please Enter valid mobile number.");
+return false;
+}
+if(password1.length<6){
+alert("password must contain more than 6 charecters.");
+return false;
+
+}
+if(password1!=password2){
+alert("password and confirm password should be same");
+return false;
+}
+if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email1.length){  
+  alert("Please enter a valid e-mail address");  
+  return false;  
+  }  
+
+
+
+else{
+return true;
+}
+
+
+
+}
+</script>
+</head>
+<body bgcolor="LightGray">
+<center><h2>Registration form</h2></center><br/>
+
+<center><form name="form1"onsubmit="return validate()" action="success.html" method="post">
+<lable for="firstname">Enter first name: </lable>
+<input type="text" id="name1" name="name1" pattern="[a-zA-Z ]{3,}"/><br/><br/>
+
+<lable for="secondname">Enter second name: </lable>
+<input type="text" id="name2" name="name2" pattern="[a-zA-Z ]{3,}"/><br/><br/>
+
+<lable for="dob">Date of birth: </lable>
+<input type="date" id="dob" name="dob"/><br/><br/>
+
+<lable for="phn">Phone number: </lable>
+<input type="number" id="phnnumber" name="phnnum"/><br/><br/>
+
+
+<lable for="email">Email: </lable>
+<input type="text" id="email" name="email"/><br/><br/>
+
+<lable for="password">Password: </lable>
+<input type="password" id="pass" name="pass"/><br/><br/>
+
+<lable for="confirmpassword">Confirm password: </lable>
+<input type="password" id="cpass" name="cpass"/><br/><br/>
+
+<input type="submit" value="Register" />
+<input type="reset" value="clear" />
+
+</form></center>
+
+
+
+
+
+
+</body>
+
+
+</html>
